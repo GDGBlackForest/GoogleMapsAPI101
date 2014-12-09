@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset='utf-8'>
+		<title>Google Maps API 101 - DEMO Example</title>
+		
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+		<link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet' />
+		<link href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css' rel='stylesheet' />
+		
+		<link href='./css/example_demo.css' rel='stylesheet' />
+
+	</head>
+
+	<body>
+	
+		<div id='example_mapCanvas'></div>
+		
+		<div id='example_toolbox' class='toolbox'>
+			<div class='toolbox_titleBar'>Toolbox</div>
+			<div class='toolbox_content'>
+			
+			
+				<div class='toolbox_formElement_main'>
+				
+					<div class='checkbox'>
+						<label><input type='checkbox' id='toggleDrawingManager_Checkbox' />Enable DrawingManager</label>
+					</div>
+				
+					<div class='radio'>
+						<label><input type='radio' name='setMapTypeId' id='setMapTypeId_Map' value='map' checked />Map</label>
+						<label><input type='radio' name='setMapTypeId' id='setMapTypeId_Hybrid' value='hybrid' />Satellite (hybrid)</label>
+						<label><input type='radio' name='setMapTypeId' id='setMapTypeId_Satellite' value='satellite' />Satellite</label>
+						<label><input type='radio' name='setMapTypeId' id='setMapTypeId_Terrain' value='terrain' />Terrain</label>
+					</div>
+					
+				</div>
+				<div class='toolbox_formElement_main'>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div id='example_addedElementsList' class='toolbox'>
+			<div class='toolbox_titleBar'>Elements Control</div>
+			<div class='toolbox_content'>
+				<div id='toolbox_colorPalette'></div>
+				<div class='clear'></div>
+				<div>
+					<button id="delete-button">Delete selected shape</button>
+				</div>
+			</div>
+		</div>
+		
+		<input type='text' id='placesLookup_InputText' class='form-control' placeholder='Search places...' />
+		
+		<div id='addressLookup_wrapper' class='form-control'>
+			<i class='fa fa-search fa-fw'></i>
+		</div>
+		
+		<div id='errorModal' class='modal fade bs-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='errorModal_Title' aria-hidden='true'>
+		  <div class='modal-dialog modal-sm'>
+			<div class='modal-content'>
+			  <div class='modal-header alert'>
+				<button type='button' class='close' data-dismiss='modal'>
+					<span aria-hidden='true'>x</span>
+					<span class='sr-only'>close</span>
+				</button>
+				<h4 class='modal-title' id='errorModal_Title'>Error</h4>
+			  </div>
+			  <div class='modal-body'>
+				Error occured.
+			  </div>
+			</div>
+		  </div>
+		</div>
+				
+		<script src="//maps.googleapis.com/maps/api/js?sensor=false&libraries=drawing,geometry,places&callback=Example.loadMap"></script>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+		<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'></script>
+		<script src='./js/example_demo.js'></script>
+		<script>
+			jQuery(document).ready(function() {
+			
+				jQuery( '#example_toolbox' ).draggable({ addClasses: false });
+				jQuery( '#example_addedElementsList' ).draggable({ addClasses: false });
+			
+				var example_MapOptions = {
+					zoomLevel:	13,
+					center: 	{
+						latitude: 	48.210, 
+						longitude:	8.515
+					}
+				};
+				
+				var example_PredefinedMarkers = [
+					[1, 48.210, 8.515],
+					[2, 48.22972044455568, 8.38254690170288]
+				];
+				
+				Example.init('example_mapCanvas', example_MapOptions, example_PredefinedMarkers);
+
+				
+				
+			});
+		</script>
+	
+	</body>
+	
+</html>

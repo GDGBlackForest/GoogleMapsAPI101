@@ -1,0 +1,106 @@
+html {
+	width:					100%;
+	height:					100%;
+	margin:					0;
+	padding:				0;
+}
+
+body {
+	width:					100%;
+	height:					100%;
+	margin:					0;
+	padding:				0;
+	background-color:		#808080;
+	color:					#000000;
+	font-family:			'Roboto', sans-serif;
+}
+
+.clear  {
+	clear:					both;
+}
+
+#example_mapCanvas {
+	width:					100%;
+	height:					100%;
+}
+
+#example_toolbox {
+	top:					50px;
+	right:					40px;
+	width:					220px;
+}
+
+#example_addedElementsList {
+	top:					50px;
+	right:					272px;
+	width:					220px;
+	display:				none;
+	text-align:				center;
+}
+
+.toolbox {
+	padding:				6px 12px;
+	position:				absolute;
+	color:					#555;
+	background-color:		#FFF;
+	border:					1px #CCC solid;
+	font-size:				14px;
+	border-radius: 			4px;
+	-webkit-border-radius:	4px;
+	-moz-border-radius: 	4px;
+}
+
+#addressLookup_wrapper {	
+	margin-right:			40px;
+	width:					45px;
+	margin-top: 			5px;
+	margin-left:			5px;
+	cursor:					pointer;
+}
+
+#placesLookup_InputText {
+	width: 					400px;
+	margin-top: 			5px;
+}
+
+.toolbox_titleBar {
+	border-bottom:			1px #CCC solid;
+	cursor:					pointer;
+	font-weight:			bold;
+	padding:				2px;
+}
+
+.toolbox_titleBar:active {
+	cursor:					move;
+}
+
+.toolbox_content {
+	padding:				2px;
+
+}
+
+#toolbox_colorPalette {
+	clear: 					both;
+}
+
+.toolbox_colorButton {
+	width: 					30px;
+	height: 				30px;
+	font-size: 				0;
+	margin: 				10px;
+	float: 					left;
+	cursor: 				pointer;
+}
+
+.toolbox_formElement_main {
+
+}
+
+.toolbox_formElement_field {
+	float:					left;
+}
+
+.toolbox_formElement_label {
+	float:					left;
+	padding:				1px 0 0 0;
+}

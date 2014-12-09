@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset='utf-8'>
+		<title>Google Maps API 101 - Example 3</title>
+		<script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
+		<style>
+			#mapContainer {
+				width:800px;
+				height:400px;
+			}
+		</style>
+	</head>
+
+	<body>
+	
+		<h1>Example #3</h1>
+		
+		<input id='geocode' type='text' placeholder='Enter address...' /> <input type='button' onclick='translateAddress()' value='search' />
+		<br /><br />
+		
+		<div id='mapContainer'></div>
+		
+		<script>
+		
+			var mapObject, exLatLng, geocoder;
+			
+			function initMap() {
+				
+				exLatLng = new google.maps.LatLng(48.210, 8.515);
+				geocoder = new google.maps.Geocoder();
+				
+				mapObject = new google.maps.Map(document.getElementById('mapContainer'), {
+					center: exLatLng,
+					zoom:	14
+				});
+				
+			
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(48.210, 8.515),
+					map: mapObject
+				});
+				
+			}
+			
+			function translateAddress() {
+				var search = document.getElementById('geocode').value;
+				geocoder.geocode({
+					'address': search
+				}, function(results, status) {
+				
+					if (google.maps.GeocoderStatus.OK) {
+					
+						var geocodeMarker = new google.maps.Marker({
+							position: results[0].geometry.location,
+							map: mapObject
+						});
+						mapObject.setCenter(results[0].geometry.location);
+						
+					} else {
+						alert('Error: ' + status);
+					}
+				});
+			}
+			
+			google.maps.event.addDomListener(window, 'load', initMap);
+		
+		</script>
+	
+	</body>
+	
+</html>

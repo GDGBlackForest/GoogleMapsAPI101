@@ -1,0 +1,103 @@
+body {
+	margin:0;
+	padding:0;
+	font-family:'Open Sans', sans-serif;
+	font-size:14px;
+	background-color:#fafafa;
+	color:#333;
+}
+
+h1, h2, p {
+	margin:0;
+	padding:0;
+	font-size:inherit;
+	font-weight:normal;
+}
+
+a {
+	color:#428bca;
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+#header {
+	height:40px;
+	border-bottom:4px #547EBF solid;
+	padding:10px 0 10px 75px;
+	background-color:#FFF;
+}
+
+#gdg {
+	height:40px;
+	font-size:30px;
+	color:#777;
+	background-image:url(//gdgblackforest.github.io/files/images/gdg_logo.svg);
+	background-size:contain;
+	background-position:0 0;
+	background-repeat:no-repeat;
+	padding-left:30px;
+	float:left;
+}
+
+.gdg {
+	font-weight:800;
+	line-height:1.1;
+}
+
+.chapter {
+	font-weight:500;
+	line-height:1.1;
+}
+
+.topic {
+	border-left:1px solid silver;
+	float:left;
+	height:40px;
+	font-size:30px;
+	color:#777;
+	margin-left:10px;
+	padding-left:10px;
+}
+
+#content {		
+
+}
+
+.card {
+	width:600px;
+	margin:25px auto;
+	padding:25px;
+	background-color:#FFF;
+	border:1px #d8d8d8 solid;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+#footer {
+	border-top:1px #E5E5E5 solid;
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+
+.copyright {
+	padding:5px 15px;
+	font-size:10pt;
+	line-height:1.8;
+}
+
+.center {
+	text-align:center;
+}
+
+.bold {
+	font-weight:700;
+}
+
+.semi-bold {
+	font-weight:600;
+}
